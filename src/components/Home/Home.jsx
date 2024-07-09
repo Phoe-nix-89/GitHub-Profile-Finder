@@ -7,8 +7,10 @@ function Home() {
 
     return (
         <div className="flex flex-col items-center justify-between">
-            <InputBox updateSearchTerm={setSearchTerm} />
-            {searchTerm ? <GithubCardsContainer search={searchTerm} /> : "Write something above to display the profiles matching the particular letter"}
+            <input type="text" placeholder="Enter the name" onChange={(e) => {
+                setSearchTerm(e.target.value);
+            }} />
+            {searchTerm ? <GithubCardsContainer search={searchTerm} /> : <div className="font-bold">Write the name of the person to find</div>}
         </div>
     );
 }
