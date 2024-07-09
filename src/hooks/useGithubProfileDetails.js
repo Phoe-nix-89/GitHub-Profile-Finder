@@ -16,6 +16,8 @@ function useGitHubDetails(username) {
             isLoading: false,
             data: response.data,
         }));
+
+        console.log(response.data);
     }
 
     useEffect(() => {
